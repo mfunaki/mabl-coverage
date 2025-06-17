@@ -1,18 +1,23 @@
-export const metadata = {
+import './globals.css';
+import type { Metadata } from 'next';
+import { Header } from '@/components/Header';
+
+export const metadata: Metadata = {
   title: 'Demo App',
+  description: 'mabl カバレッジデモサイト',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ja">
       <body>
-        <header>
-          <h2>Demo App</h2>
-        </header>
+        <Header />
         <hr />
         {children}
         <hr />
-        <footer>© 2025 Masahiko's Demo</footer>
+        <footer style={{ textAlign: 'center', marginTop: '2rem' }}>
+          © 2025 Masahiko's Demo App
+        </footer>
       </body>
     </html>
   );
