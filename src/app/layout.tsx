@@ -14,7 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main>{children}</main>
         <footer style={{ textAlign: 'center', padding: '1rem 0' }}>
-          © 2025 Masahiko’s Demo App
+          © 2025 Masahiko Funaki
         </footer>
       </body>
     </html>
