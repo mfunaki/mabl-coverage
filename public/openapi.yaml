@@ -5,7 +5,7 @@ info:
   description: 製品一覧および製品詳細情報を提供するAPIエンドポイント
 
 servers:
-  - url: https://your-service-url.a.run.app
+  - url: https://mabl-coverage-852080299306.us-central1.run.app
     description: Cloud Run 上の本番環境
 
 paths:
