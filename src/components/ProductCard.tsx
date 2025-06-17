@@ -1,21 +1,18 @@
 import Link from 'next/link';
+import { Product } from '@/types/product';
 
-type ProductCardProps = {
-  id: string;
-  title: string;
-    description: string;
-};
+type ProductCardProps = Pick<Product, 'id' | 'title' | 'description'>;
 
 export function ProductCard({ id, title, description }: ProductCardProps) {
   return (
-    <div 
-        style={{
-            border: '1px solid #ccc',
-            padding: '1rem',
-            borderRadius: '6px',
-            marginBottom: '1rem',
-            }}
-            data-testid={`product-card-${id}`}
+    <div
+      style={{
+        border: '1px solid #ccc',
+        padding: '1rem',
+        borderRadius: '6px',
+        marginBottom: '1rem',
+      }}
+      data-testid={`product-card-${id}`}
     >
       <h3>{title}</h3>
       <p>{description}</p>

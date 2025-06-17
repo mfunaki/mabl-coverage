@@ -1,16 +1,21 @@
+// src/app/products/page.tsx
 import { ProductCard } from '@/components/ProductCard';
+import { Product } from '@/types/product';
 
-const demoProducts = [
-  { id: 'p1', title: 'Red Widget', description: '高性能な赤いウィジェット' },
-  { id: 'p2', title: 'Blue Gizmo', description: '信頼の青いギズモ' },
-  { id: 'p3', title: 'Green Thingy', description: '環境に優しいグリーン製品' },
-];
+async function fetchProducts(): Promise<Product[]> {
+  const res = await fetch('http://localhost:3000/api/products', {
+    cache: 'no-store',
+  });
+  return res.json();
+}
 
-export default function ProductsPage() {
+export default async function ProductsPage() {
+  const products = await fetchProducts();
+
   return (
     <main>
       <h1>製品一覧</h1>
-      {demoProducts.map((product) => (
+      {products.map((product: Product) => (
         <ProductCard key={product.id} {...product} />
       ))}
     </main>

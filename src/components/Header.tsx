@@ -5,10 +5,10 @@ import { usePathname } from 'next/navigation';
 import React from 'react';
 
 const navItems = [
-  { href: '/', label: 'Home' },
-  { href: '/about', label: 'このアプリについて' },
+  { href: '/', label: 'ホーム' },
+  { href: '/products', label: '製品一覧' },
   { href: '/contact', label: 'お問い合わせ' },
-  { href: '/products', label: 'Products' },
+  { href: '/about', label: 'このアプリについて' },
 ];
 
 export function Header() {
