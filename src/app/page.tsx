@@ -4,9 +4,9 @@ export default function HomePage() {
       <h1>デモサイトへようこそ</h1>
       <nav>
         <ul>
-          <li><a href="/about">About</a></li>
-          <li><a href="/contact">Contact</a></li>
-          <li><a href="/products">Products</a></li>
+          <li><a href="/products">製品一覧</a></li>
+          <li><a href="/contact">お問い合わせ</a></li>
+          <li><a href="/about">このアプリについて</a></li>
         </ul>
       </nav>
     </main>
