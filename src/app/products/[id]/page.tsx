@@ -1,3 +1,4 @@
+import { headers } from 'next/headers';
 import { Product } from '@/types/product';
 
 type Props = {
@@ -6,8 +7,11 @@ type Props = {
 
 export default async function ProductDetailPage({ params }: Props) {
   const { id } = await params;
+  const headersList = await headers();
+  const host = headersList.get('host');
+  const protocol = process.env.NODE_ENV === 'development' ? 'http' : 'https';
 
-  const res = await fetch(`http://localhost:3000/api/products/${id}`, {
+  const res = await fetch(`${protocol}://${host}/api/products/${id}`, {
     cache: 'no-store',
   });
 
