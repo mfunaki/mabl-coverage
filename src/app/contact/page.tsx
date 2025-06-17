@@ -1,7 +1,7 @@
 'use client';
 
-import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
 export default function ContactPage() {
   const router = useRouter();
@@ -13,51 +13,47 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // 本番ではここでAPIに送信処理などを実装
     router.push('/contact/thanks');
   };
 
   return (
     <main>
-      <h1>お問い合わせ</h1>
-      <form onSubmit={handleSubmit}>
+      <h1 data-testid="contact-heading">お問い合わせ</h1>
+      <form onSubmit={handleSubmit} data-testid="contact-form">
         <div>
-          <label>
-            お名前:
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-              data-testid="contact-name"
-            />
-          </label>
+          <label htmlFor="name">お名前:</label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            required
+            value={formData.name}
+            onChange={handleChange}
+            data-testid="contact-name"
+          />
         </div>
         <div>
-          <label>
-            メールアドレス:
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              data-testid="contact-email"
-            />
-          </label>
+          <label htmlFor="email">メールアドレス:</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            required
+            value={formData.email}
+            onChange={handleChange}
+            data-testid="contact-email"
+          />
         </div>
         <div>
-          <label>
-            メッセージ:
-            <textarea
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              required
-              data-testid="contact-message"
-            />
-          </label>
+          <label htmlFor="message">メッセージ:</label>
+          <textarea
+            id="message"
+            name="message"
+            required
+            value={formData.message}
+            onChange={handleChange}
+            data-testid="contact-message"
+          />
         </div>
         <button type="submit" data-testid="contact-submit">
           送信
