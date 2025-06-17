@@ -7,7 +7,7 @@ import React from 'react';
 const navItems = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'このアプリについて' },
-  { href: '/contact', label: 'Contact' },
+  { href: '/contact', label: 'お問い合わせ' },
   { href: '/products', label: 'Products' },
 ];
 
