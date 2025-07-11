@@ -1,0 +1,15 @@
+{
+	"servers": {
+		"mcp-mabl": {
+			"type": "stdio",
+			"command": "mabl",
+			"args": [
+				"mcp",
+				"start",
+				"--api-key",
+				"V8lB78rjKkN61aDAPdWb8g"
+			]
+		}
+	},
+	"inputs": []
+}
