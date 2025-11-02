@@ -30,3 +30,26 @@ gcloud run deploy mabl-coverage \
   --region us-central1 \
   --platform managed \
   --allow-unauthenticated
+```
+
+## 🐳 Docker での実行 / Docker Usage
+
+### 本番環境 / Production
+
+```bash
+# イメージをビルド
+docker build -t mabl-coverage .
+
+# コンテナを起動
+docker run -p 3000:3000 mabl-coverage
+
+# または docker-compose で起動
+docker-compose up --build
+```
+
+### 開発環境 / Development
+
+```bash
+# 開発用コンテナを起動（ホットリロード有効）
+docker-compose -f docker-compose.dev.yml up --build
+```

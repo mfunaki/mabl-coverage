@@ -1,6 +1,8 @@
+@import "tailwindcss";
+
 /* src/app/globals.css */
 
-/* 1. CSSリセット（現代的なベースリセット） */
+/* カスタムスタイル */
 *,
 *::before,
 *::after {
