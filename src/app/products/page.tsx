@@ -4,16 +4,24 @@ import { ProductCard } from '@/components/ProductCard';
 import { Product } from '@/types/product';
 
 async function fetchProducts(): Promise<Product[]> {
-  const headersList = await headers(); // ✅ await を追加
-  const host = headersList.get('host');
-  const protocol = process.env.NODE_ENV === 'development' ? 'http' : 'https';
+  // 環境変数でベースURLを設定可能にする
+  // NEXT_PUBLIC_BASE_URL が設定されている場合はそれを使用
+  // 設定されていない場合は headers() から取得
+  let baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+  
+  if (!baseUrl) {
+    const headersList = await headers();
+    const host = headersList.get('host') || 'localhost:3000';
+    const protocol = process.env.NODE_ENV === 'development' ? 'http' : 'https';
+    baseUrl = `${protocol}://${host}`;
+  }
 
-  const res = await fetch(`${protocol}://${host}/api/products`, {
+  const res = await fetch(`${baseUrl}/api/products`, {
     cache: 'no-store',
   });
 
   if (!res.ok) {
-    throw new Error('製品一覧の取得に失敗しました');
+    throw new Error(`製品一覧の取得に失敗しました (baseUrl: ${baseUrl})`);
   }
 
   return res.json();

@@ -7,6 +7,9 @@ services:
       - "3000:3000"
     environment:
       - NODE_ENV=production
+      # コンテナ内部からのAPI呼び出し用ベースURL
+      # コンテナ内部では常に localhost:3000 を使用
+      - NEXT_PUBLIC_BASE_URL=http://localhost:3000
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3000/"]
