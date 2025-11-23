@@ -1,0 +1,55 @@
+{
+	"name": "Next.js Development",
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-20",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+	
+	// ポートフォワーディング
+	"forwardPorts": [3000],
+	"portsAttributes": {
+		"3000": {
+			"label": "Next.js App",
+			"onAutoForward": "notify"
+		}
+	},
+	
+	// コンテナ起動後のコマンド
+	"postCreateCommand": "npm install",
+	"postStartCommand": "echo 'DevContainer started! Run npm run dev to start the app.'",
+	
+	// VS Code拡張機能
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				// TypeScript / JavaScript
+				"dbaeumer.vscode-eslint",
+				"esbenp.prettier-vscode",
+				
+				// Git
+				"eamodio.gitlens",
+				
+				// Docker
+				"ms-azuretools.vscode-docker",
+				
+				// Utilities
+				"christian-kohler.path-intellisense",
+				"formulahendry.auto-rename-tag",
+				"bradlc.vscode-tailwindcss"
+			],
+			"settings": {
+				"editor.formatOnSave": true,
+				"editor.defaultFormatter": "esbenp.prettier-vscode",
+				"editor.codeActionsOnSave": {
+					"source.fixAll.eslint": "explicit"
+				},
+				"typescript.tsdk": "node_modules/typescript/lib",
+				"typescript.enablePromptUseWorkspaceTsdk": true,
+				"files.eol": "\n"
+			}
+		}
+	},
+	
+	// DevContainerの機能
+	"features": {
+		"ghcr.io/devcontainers/features/github-cli:1": {}
+	}
+}
