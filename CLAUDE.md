@@ -21,14 +21,8 @@ npm run lint
 ### Docker開発
 
 ```bash
-# 開発環境（ホットリロード有効）
-docker-compose -f docker-compose.dev.yml up --build
-
 # 本番環境
 docker-compose up --build
-
-# Windows環境でポート8082を使用する場合
-docker-compose -f docker-compose.dev.windows.yml up --build
 ```
 
 ### Cloud Runデプロイ
