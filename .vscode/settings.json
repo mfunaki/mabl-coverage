@@ -2,5 +2,20 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },
-  "eslint.validate": ["javascript", "typescript", "typescriptreact"]
+  "eslint.validate": [
+    "javascript",
+    "typescript",
+    "typescriptreact"
+  ],
+  "google.gemini.mcpServers": {
+    "mabl": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@mablhq/mabl-cli@latest",
+        "mcp",
+        "start"
+      ]
+    }
+  }
 }
